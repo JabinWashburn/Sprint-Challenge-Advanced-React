@@ -2,6 +2,8 @@ import React from 'react'
 import './App.css'
 import axios from 'axios'
 import { PlayerCards } from './components/PlayerCards'
+import { useDarkMode } from './hooks/darkMode'
+
 
 
 class App extends React.Component{
@@ -20,11 +22,13 @@ class App extends React.Component{
       })
       .catch(err => console.error.apply(err));
   }
+  
 
   render(){
     return (
       <div className = 'App'>
         <h1>Place Holder</h1>
+        <button onClick={toggleMode}>Dark Mode😎</button>
         {this.state.players.map(item => {
           return <PlayerCards players={item} />
         })}

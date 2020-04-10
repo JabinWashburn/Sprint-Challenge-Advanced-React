@@ -1,6 +1,8 @@
 import React from 'react'
+import { useDarkMode } from '../hooks/darkMode'
 
 export function PlayerCards(props){
+
     return(
         <div>
             <p>Name:{props.players.name}</p>
