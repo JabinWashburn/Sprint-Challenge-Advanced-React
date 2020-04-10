@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import axios from 'axios'
 import { PlayerCards } from './components/PlayerCards'
-import { useDarkMode } from './hooks/darkMode'
+import { DarkModeButton } from './components/DarkModeButton'
 
 
 
@@ -27,8 +27,8 @@ class App extends React.Component{
   render(){
     return (
       <div className = 'App'>
-        <h1>Place Holder</h1>
-        <button onClick={toggleMode}>Dark Mode😎</button>
+        <DarkModeButton />
+        <h1>Best Soccer Players Ever</h1>
         {this.state.players.map(item => {
           return <PlayerCards players={item} />
         })}
