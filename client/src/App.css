@@ -31,3 +31,21 @@
     transform: rotate(360deg);
   }
 }
+.dark-mode {
+  color: black;
+  background-color: #313843;
+}
+.playercard{
+  background-color: #61dafb;
+  max-width: 25%;
+  margin-left: 38%;
+  border-radius: 15px;
+}
+.dark-mode h1{
+  color: white;
+}
+.App p{
+  padding: 25px 0;
+  font-weight: bold;
+  font-size: large;
+}
