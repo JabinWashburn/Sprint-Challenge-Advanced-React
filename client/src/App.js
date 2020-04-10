@@ -1,13 +1,14 @@
 import React from 'react'
 import './App.css'
 import axios from 'axios'
+import { PlayerCards } from './components/PlayerCards'
 
 
 class App extends React.Component{
   constructor(){
     super();
     this.state = {
-      players: []
+      players: [{}]
     }
   }
   componentDidMount(){
@@ -15,7 +16,7 @@ class App extends React.Component{
       .get('http://localhost:5000/api/players')
       .then(res => {
         console.log(res.data)
-        this.setState(res.data);
+        this.setState({players:res.data});
       })
       .catch(err => console.error.apply(err));
   }
@@ -24,8 +25,11 @@ class App extends React.Component{
     return (
       <div className = 'App'>
         <h1>Place Holder</h1>
-
+        {this.state.players.map(item => {
+          return <PlayerCards players={item} />
+        })}
       </div>
+      
     )
   }
 }
